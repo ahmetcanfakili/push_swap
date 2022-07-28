@@ -6,15 +6,16 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/07/27 13:56:27 by afakili          ###   ########.fr       */
+/*   Updated: 2022/07/28 15:16:07 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main()
+int main(int argc, char **argv)
 {
-
+	t_swap a;
+	t_swap b;
 }
 
 void swap_a()
