@@ -25,3 +25,9 @@
 [submodule "utils/get_next_line/get_next_line"]
 	path = utils/get_next_line/get_next_line
 	url = https://github.com/ahmetcanfakili/get_next_line.git
+[submodule "utils/get_next_line"]
+	path = utils/get_next_line
+	url = https://github.com/ahmetcanfakili/get_next_line.git
+[submodule "utils/libft"]
+	path = utils/libft
+	url = https://github.com/ahmetcanfakili/libft.git
