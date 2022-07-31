@@ -1,0 +1,9 @@
+[submodule "push_swap/utils/libft"]
+	path = push_swap/libft
+	url = git@github.com:ahmetcanfakili/libft.git
+[submodule "push_swap/utils/ft_printf"]
+	path = push_swap/ft_printf
+	url = git@github.com:ahmetcanfakili/ft_printf.git
+[submodule "push_swap/utils/get_next_line"]
+	path = push_swap/utils/get_next_line
+	url = git@github.com:ahmetcanfakili/get_next_line.git
