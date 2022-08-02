@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/02 19:56:35 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/02 20:08:46 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,6 @@ void    rotate(t_swap *stack)
     unsigned    i;
 
     i = 1;
-    if (stack->capacity < 2)
-    {
-        printf("Rotate Cannot Be Made!\n");
-        exit(1);
-    }
     tmp = stack->array[stack->capacity - 1];
     while (i < stack->capacity)
     {
