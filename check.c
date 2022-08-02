@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 18:25:02 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/01 18:25:02 by afakili          ###   ########.fr       */
+/*   Created: 2022/08/02 16:36:19 by afakili           #+#    #+#             */
+/*   Updated: 2022/08/02 16:36:19 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void check_dup(t_swap *stack)
 {
-	t_swap a;
-	t_swap b;
+    unsigned i;
+    unsigned j;
 
-	a.id = 'a';
-	b.id = 'b';
-	if (argc >= 2)
-		create_stack(argc, argv, &a, &b);
-	else
-		return (0);
-	free(a.array);
-	free(b.array);
-	return (0);
+    i = 0;
+    j = i + 1;
+    while (i < stack->capacity)
+    {
+        j = i + 1;
+        while (j < stack->capacity)
+        {
+            if (stack->array[i] == stack->array[j])
+            {
+                printf("Error!");
+                free(stack->array);
+            }
+            j++;
+        }
+        i++;
+    }
 }
+

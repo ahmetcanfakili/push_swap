@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/02 14:47:37 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/02 19:56:35 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void    swap(t_swap *stack)
     int tmp;
 
 	if (stack->capacity < 2)
+    {
         printf("Swap Cannot Be Made!\n");
+        exit(1);
+    }
     tmp = stack->array[stack->capacity - 1];
     stack->array[stack->capacity - 1] = stack->array[stack->capacity - 2];
     stack->array[stack->capacity - 2] = tmp;
@@ -36,8 +39,12 @@ void    ss(t_swap *stack_1, t_swap *stack_2)
 
 void    push(t_swap *stack_1, t_swap *stack_2)
 {
-    
-    //content
+    if (stack_1->capacity < 1)
+    {
+        printf("Push Cannot Be Made!\n");
+        exit(1);
+    }
+    stack_2->array[stack_2->capacity - 1] = stack_1->array[stack_1->capacity - 1];
     
 }
 
@@ -47,6 +54,11 @@ void    rotate(t_swap *stack)
     unsigned    i;
 
     i = 1;
+    if (stack->capacity < 2)
+    {
+        printf("Rotate Cannot Be Made!\n");
+        exit(1);
+    }
     tmp = stack->array[stack->capacity - 1];
     while (i < stack->capacity)
     {

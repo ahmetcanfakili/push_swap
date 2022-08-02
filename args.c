@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 18:25:02 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/01 18:25:02 by afakili          ###   ########.fr       */
+/*   Created: 2022/08/02 16:08:44 by afakili           #+#    #+#             */
+/*   Updated: 2022/08/02 16:08:44 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+char **read_args(int argc, char **argv)
 {
-	t_swap a;
-	t_swap b;
+	char *str;
+	char **split_str;
+	unsigned idx;
 
-	a.id = 'a';
-	b.id = 'b';
-	if (argc >= 2)
-		create_stack(argc, argv, &a, &b);
-	else
-		return (0);
-	free(a.array);
-	free(b.array);
-	return (0);
+	idx = 1;
+	str = "";
+	while (argv[idx])
+	{
+		str = ft_strjoin(str, argv[idx]);
+		str = ft_strjoin(str, " ");
+		idx++;
+	}
+	split_str = ft_split(str, " ");
+	free(str);
+	return (split_str);
 }
