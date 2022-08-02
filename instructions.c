@@ -6,47 +6,45 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/01 19:44:10 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/02 14:47:37 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(t_swap *stack)
+void    swap(t_swap *stack)
 {
     int tmp;
 
 	if (stack->capacity < 2)
         printf("Swap Cannot Be Made!\n");
-
     tmp = stack->array[stack->capacity - 1];
     stack->array[stack->capacity - 1] = stack->array[stack->capacity - 2];
     stack->array[stack->capacity - 2] = tmp;
-
     if (stack->id = 'a')
         printf("sa\n");
     else
         printf("sb\n");
 }
 
-void ss(t_swap *stack_1, t_swap *stack_2)
+void    ss(t_swap *stack_1, t_swap *stack_2)
 {
 	swap(stack_1);
 	swap(stack_2);
     printf("ss\n");
 }
 
-void push(t_swap *stack_1, t_swap *stack_2)
+void    push(t_swap *stack_1, t_swap *stack_2)
 {
     
     //content
     
 }
 
-void rotate(t_swap *stack)
+void    rotate(t_swap *stack)
 {
-    int tmp;
-    unsigned i;
+    int         tmp;
+    unsigned    i;
 
     i = 1;
     tmp = stack->array[stack->capacity - 1];
@@ -62,17 +60,17 @@ void rotate(t_swap *stack)
         printf("rb\n");
 }
 
-void rr(t_swap *stack_1, t_swap *stack_2)
+void    rr(t_swap *stack_1, t_swap *stack_2)
 {
     rotate(stack_1);
     rotate(stack_2);
 	printf("rr");
 }
 
-void reverse_rotate(t_swap *stack)
+void    reverse_rotate(t_swap *stack)
 {
-    unsigned i;
-    int tmp;
+    unsigned    i;
+    int         tmp;
 
     i = 1;
     tmp = stack->array[0];
@@ -88,7 +86,7 @@ void reverse_rotate(t_swap *stack)
         printf("rrb\n");
 }
 
-void rrr(t_swap *stack_1, t_swap *stack_2)
+void    rrr(t_swap *stack_1, t_swap *stack_2)
 {
     reverse_rotate(stack_1);
     reverse_rotate(stack_2);
