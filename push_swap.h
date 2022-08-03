@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/02 19:40:16 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/03 16:58:16 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct s_swap {
 
 void control_point(void);
 
-void    swap(t_swap *stack);
+int     swap(t_swap *stack);
 void    ss(t_swap *stack_1, t_swap *stack_2);
-void    push(t_swap *stack_1, t_swap *stack_2);
+int     push(t_swap *stack_1, t_swap *stack_2);
 void    rotate(t_swap *stack);
 void    rr(t_swap *stack_1, t_swap *stack_2);
 void    reverse_rotate(t_swap *stack);

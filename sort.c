@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-char *pre_sort(t_swap *stack)
+char	*pre_sort(t_swap *stack)
 {
 	unsigned i;
 	unsigned j;
@@ -44,7 +44,7 @@ char *pre_sort(t_swap *stack)
 	return (tmp);
 }
 
-void indexing(t_swap *stack)
+void	indexing(t_swap *stack)
 {
     unsigned i;
     unsigned j;
@@ -64,4 +64,34 @@ void indexing(t_swap *stack)
         i++;
     }
     free(sorted);
+}
+
+void	two_arg_sort(t_swap *stack)
+{
+	if (stack->array[1] > stack->array[0])
+		swap(stack);
+}
+
+void	three_arg_sort(t_swap *stack)
+{
+		
+}
+
+void	four_arg_sort(t_swap *stack_1, t_swap *stack_2)
+{
+
+}
+
+void	five_arg_sort(t_swap *stack_1, t_swap *stack_2)
+{
+
+}
+
+
+
+
+void	big_sort()
+{
+
+
 }

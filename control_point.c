@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <stdio.h>
 
 void control_point(void)
 {

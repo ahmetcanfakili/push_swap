@@ -6,24 +6,25 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/02 20:08:46 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/03 16:55:45 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    swap(t_swap *stack)
+int    swap(t_swap *stack)
 {
     int tmp;
 
-	if (stack->capacity < 2)
+	if (stack->capacity > 1)
     {
-        printf("Swap Cannot Be Made!\n");
-        exit(1);
+        tmp = stack->array[stack->capacity - 1];
+        stack->array[stack->capacity - 1] = stack->array[stack->capacity - 2];
+        stack->array[stack->capacity - 2] = tmp;
     }
-    tmp = stack->array[stack->capacity - 1];
-    stack->array[stack->capacity - 1] = stack->array[stack->capacity - 2];
-    stack->array[stack->capacity - 2] = tmp;
+    else
+        return (0);
+    
     if (stack->id = 'a')
         printf("sa\n");
     else
@@ -37,15 +38,21 @@ void    ss(t_swap *stack_1, t_swap *stack_2)
     printf("ss\n");
 }
 
-void    push(t_swap *stack_1, t_swap *stack_2)
+int    push(t_swap *stack_1, t_swap *stack_2)
 {
-    if (stack_1->capacity < 1)
+    if (stack_1->capacity > 0 || stack_2->capacity > 0)
     {
-        printf("Push Cannot Be Made!\n");
-        exit(1);
+        stack_2->array[++stack_2->capacity] = stack_1->array[stack_1->capacity - 1];
+        stack_1->capacity -= 1;
+        stack_2->capacity += 1;
     }
-    stack_2->array[stack_2->capacity - 1] = stack_1->array[stack_1->capacity - 1];
-    
+    else
+        return (0);
+        
+    if (stack_1->id = 'b')
+        printf("pa\n");
+    else
+        printf("pb\n");
 }
 
 void    rotate(t_swap *stack)

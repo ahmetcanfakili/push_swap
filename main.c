@@ -27,3 +27,11 @@ int main(int argc, char **argv)
 	free(b.array);
 	return (0);
 }
+
+
+
+//2 3 4 5 argümanı neden ayrı şekilde sıralıyoruz
+// argüman kontrolleri eksik
+// push fonksiyonu eksik
+// 
+
