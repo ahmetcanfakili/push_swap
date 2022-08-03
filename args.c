@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-char **read_args(int argc, char **argv)
+char	**read_args(int argc, char **argv)
 {
-	char *str;
-	char **split_str;
-	unsigned idx;
+	char		*str;
+	char		**split_str;
+	unsigned	idx;
 
 	idx = 1;
 	str = "";

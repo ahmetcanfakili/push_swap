@@ -14,10 +14,10 @@
 
 char	*pre_sort(t_swap *stack)
 {
-	unsigned i;
-	unsigned j;
-	char *tmp;
-	int tmp_2;
+	unsigned	i;
+	unsigned	j;
+	char		*tmp;
+	int			tmp_2;
 
 	i = 0;
 	while (i < stack->capacity)
@@ -46,9 +46,9 @@ char	*pre_sort(t_swap *stack)
 
 void	indexing(t_swap *stack)
 {
-    unsigned i;
-    unsigned j;
-    char *sorted;
+    unsigned	i;
+    unsigned	j;
+    char		*sorted;
 
     sorted = pre_sort(stack);
     i = 0;
@@ -74,7 +74,7 @@ void	two_arg_sort(t_swap *stack)
 
 void	three_arg_sort(t_swap *stack)
 {
-		
+
 }
 
 void	four_arg_sort(t_swap *stack_1, t_swap *stack_2)
@@ -94,4 +94,19 @@ void	big_sort()
 {
 
 
+}
+
+void	check_sorted(t_swap *stack)
+{
+	unsigned	i;
+
+	i = 0;
+	while (i < stack->capacity - 1)
+	{
+		if (stack->array[i] > stack->array[i + 1])
+			i++;
+		else
+			return (1);
+	}
+	return (0);
 }

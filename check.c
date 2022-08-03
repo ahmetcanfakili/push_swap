@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void check_dup(t_swap *stack)
+void    check_dup(t_swap *stack)
 {
-    unsigned i;
-    unsigned j;
+    unsigned    i;
+    unsigned    j;
 
     i = 0;
     j = i + 1;

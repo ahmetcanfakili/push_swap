@@ -14,8 +14,8 @@
 
 int main(int argc, char **argv)
 {
-	t_swap a;
-	t_swap b;
+	t_swap	a;
+	t_swap	b;
 
 	a.id = 'a';
 	b.id = 'b';
@@ -29,9 +29,4 @@ int main(int argc, char **argv)
 }
 
 
-
-//2 3 4 5 argümanı neden ayrı şekilde sıralıyoruz
-// argüman kontrolleri eksik
-// push fonksiyonu eksik
-// 
 

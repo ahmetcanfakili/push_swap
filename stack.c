@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
+void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
 {
-	unsigned i;
-	char **string;
+	unsigned	i;
+	char		**string;
 
 	i = 0;
 	string = read_args(argc, argv);
