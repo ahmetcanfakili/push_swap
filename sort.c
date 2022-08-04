@@ -72,31 +72,98 @@ void	two_arg_sort(t_swap *stack)
 		swap(stack);
 }
 
+int	get_max_idx(t_swap *stack)
+{
+	int	i;
+	int	arg;
+
+	arg = stack->array[stack->capacity - 1];
+	i = stack->capacity - 1;
+	while (i--)
+		if (arg < (stack->array[i]))
+			arg = stack->array[i];
+	return (i);
+}
+
+int	get_min_idx(t_swap *stack)
+{
+	int	i;
+	int	arg;
+
+	arg = stack->array[stack->capacity - 1];
+	i = stack->capacity - 1;
+	while (i--)
+		if (arg > (stack->array[i]))
+			arg = stack->array[i];
+	return (i);
+}
+
 void	three_arg_sort(t_swap *stack)
 {
+	int max_idx;
+	int is_sorted;
 
+	max_idx = get_max_idx(stack);
+
+	if (max_idx == 2)
+	{
+		rotate(stack);
+		is_sorted = check_sorted(stack);
+		if (is_sorted == 1)
+			swap(stack);
+	}
+
+	else if (is_sorted == 1)
+	{
+		is_sorted = NULL;
+		reverse_rotate(stack);
+		is_sorted = check_sorted(stack);
+		if (is_sorted == 1)
+			swap(stack);
+	}
+
+	else
+	{
+		is_sorted = NULL;
+		is_sorted = check_sorted(stack);
+		if (is_sorted == 1)
+			swap(stack);
+	}	
 }
 
 void	four_arg_sort(t_swap *stack_1, t_swap *stack_2)
 {
+	unsigned min_idx;
+	int tmp;
+	int is_sorted;
 
+	min_idx = get_min_idx(stack_1);
+	tmp = stack_1->array[stack_1->capacity - 1];
+	stack_1->array[stack_1->capacity - 1] = stack_1->array[min_idx];
+	stack_1->array[min_idx] = tmp;
+	push(stack_1, stack_2);
+	three_arg_sort(stack_1);
+	push(stack_2, stack_1);
 }
 
 void	five_arg_sort(t_swap *stack_1, t_swap *stack_2)
 {
-
+	push(stack_1, stack_2);
+	push(stack_1, stack_2);
+	three_arg_sort(stack_1);
+	if (stack_2->array[1] < stack_2->array[0])
+		swap(stack_2);
+	push(stack_2, stack_1);
+	push(stack_2, stack_1);
 }
-
-
-
 
 void	big_sort()
 {
-
-
+	//if (argc > 5)
+		//functions
 }
 
-void	check_sorted(t_swap *stack)
+int	check_sorted(t_swap *stack)
 {
 	unsigned	i;
 
@@ -109,4 +176,17 @@ void	check_sorted(t_swap *stack)
 			return (1);
 	}
 	return (0);
+}
+
+void sort()
+{
+	if ()
+	{
+
+	}
+
+	else
+	{
+
+	}
 }
