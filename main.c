@@ -27,6 +27,3 @@ int main(int argc, char **argv)
 	free(b.array);
 	return (0);
 }
-
-
-

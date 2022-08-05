@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/03 19:34:20 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/05 18:36:44 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ int    push(t_swap *stack_1, t_swap *stack_2)
 {
     if (stack_1->capacity > 0 || stack_2->capacity > 0)
     {
+        stack_2->array[stack_2->capacity] = stack_1->array[--stack_1->capacity - 1];
         stack_2->capacity++;
-        stack_2->array[stack_2->capacity - 1] = stack_1->array[stack_1->capacity - 1];
-        stack_1->array[stack_1->capacity - 1] = 0;
         stack_1->capacity--;
     }
     else

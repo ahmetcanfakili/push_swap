@@ -33,3 +33,12 @@ void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
 	}
 	free(string);
 }
+
+void	free_stack(t_swap *stack)
+{
+	if (stack)
+	{
+		free(stack->array);
+		free(stack);
+	}
+}
