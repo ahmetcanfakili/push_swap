@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/05 20:17:56 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/05 21:55:52 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int		get_min_idx(t_swap *stack);
 int		get_max_idx(t_swap *stack);
 void	free_stack(t_swap *stack);
 int     is_valid_arg(char *arg);
+void	small_sort(t_swap *stack_1, t_swap *stack_2);
 
 #endif

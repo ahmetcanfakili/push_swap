@@ -26,7 +26,7 @@ void	three_arg_sort(t_swap *stack)
 		if (stack->array[1] < stack->array[2])
 			swap(stack);
 	}
-	else if (stack->array[1] > stack->array[0] && stack->array[1] > stack->a[2])
+	else if (stack->array[1] > stack->array[0] && stack->array[1] > stack->array[2])
 	{
 		reverse_rotate(stack);
 		if (stack->array[1] < stack->array[2])
@@ -57,4 +57,16 @@ void	five_arg_sort(t_swap *stack_1, t_swap *stack_2)
 		swap(stack_2);
 	push(stack_2, stack_1);
 	push(stack_2, stack_1);
+}
+
+void	small_sort(t_swap *stack_1, t_swap *stack_2)
+{
+	if (stack_1->capacity == 2)
+		two_arg_sort(stack_1);
+	else if (stack_1->capacity == 3)
+		three_args_sort(stack_1);
+	else if (stack_1->capacity == 4)
+		four_args_sort(stack_1, stack_2);
+	else if (stack_1->capacity == 5)
+		five_arg_sort(stack_1, stack_2);
 }
