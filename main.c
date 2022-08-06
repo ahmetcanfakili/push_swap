@@ -23,6 +23,10 @@ int main(int argc, char **argv)
 		create_stack(argc, argv, &a, &b);
 	else
 		return (0);
+	check_dup(&a);
+	check_sorted(&a);
+	indexing(&a);
+	sort(&a, &b);
 	free(a.array);
 	free(b.array);
 	return (0);

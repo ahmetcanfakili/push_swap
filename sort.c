@@ -52,3 +52,11 @@ void	move_top(t_swap *stack, int idx)
 	while (min_arg != stack->array[stack->capacity - 1])
 		rotate(stack);
 }
+
+void	sort(t_swap *stack_1, t_swap *stack_2)
+{
+	if (stack_1->capacity > 5)
+		big_sort(&stack_1, &stack_2);
+	else
+		small_sort(&stack_1, &stack_2);
+}

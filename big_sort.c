@@ -16,3 +16,11 @@ void	big_sort(t_swap *stack_1, t_swap *stack_2)
 {
     
 }
+
+
+
+int find_pivot()
+{
+    
+
+}
