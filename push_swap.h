@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/06 17:36:47 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/07 18:09:59 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ int     is_valid_arg(char *arg);
 void	small_sort(t_swap *stack_1, t_swap *stack_2);
 void	big_sort(t_swap *stack_1, t_swap *stack_2);
 void    sort(t_swap *stack_1, t_swap *stack_2);
+int     find_pivot(t_swap *stack);
+void    if_small_send_b(t_swap *stack_1, t_swap *stack_2);
 
 #endif
