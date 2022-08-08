@@ -41,7 +41,7 @@ void	four_arg_sort(t_swap *stack_1, t_swap *stack_2)
 	unsigned	min_idx;
 	int			is_sorted;
 
-	min_idx = get_min_idx(stack_1);
+	min_idx = get_min_idx_or_value(stack_1, 0);
 	move_top(stack_1, min_idx);
 	push(stack_1, stack_2);
 	three_arg_sort(stack_1);

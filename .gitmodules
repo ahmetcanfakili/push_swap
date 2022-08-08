@@ -1,9 +1,6 @@
 [submodule "utils/ft_printf"]
 	path = utils/ft_printf
 	url = https://github.com/ahmetcanfakili/ft_printf.git
-[submodule "utils/get_next_line"]
-	path = utils/get_next_line
-	url = https://github.com/ahmetcanfakili/get_next_line.git
 [submodule "utils/libft"]
 	path = utils/libft
 	url = https://github.com/ahmetcanfakili/libft.git

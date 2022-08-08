@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/07 18:09:59 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/08 19:15:36 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define PUSH_SWAP_H
 
 #include <stdio.h>
+#include <limits.h>
 #include "utils/ft_printf/ft_printf.h"
-#include "utils/get_next_line/get_next_line.h"
 #include "utils/libft/libft.h"
 
 typedef struct s_swap {
@@ -43,8 +43,8 @@ void	four_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	five_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	move_top(t_swap *stack, int idx);
 int		check_sorted(t_swap *stack);
-int		get_min_idx(t_swap *stack);
-int		get_max_idx(t_swap *stack);
+int		get_min_idx_or_value(t_swap *stack, int type);
+int		get_max_idx_or_value(t_swap *stack, int type);
 void	free_stack(t_swap *stack);
 int     is_valid_arg(char *arg);
 void	small_sort(t_swap *stack_1, t_swap *stack_2);
@@ -52,5 +52,6 @@ void	big_sort(t_swap *stack_1, t_swap *stack_2);
 void    sort(t_swap *stack_1, t_swap *stack_2);
 int     find_pivot(t_swap *stack);
 void    if_small_send_b(t_swap *stack_1, t_swap *stack_2);
+int     best_index(t_swap *stack, int arg);
 
 #endif

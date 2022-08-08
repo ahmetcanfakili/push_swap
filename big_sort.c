@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int find_pivot(t_swap *stack)
+int     find_pivot(t_swap *stack)
 {
     unsigned i;
     long min = stack->array[0];
@@ -30,14 +30,13 @@ int find_pivot(t_swap *stack)
     return ((min + max) / 2);
 }
 
-void if_small_send_b(t_swap *stack_1, t_swap *stack_2)
+void    if_small_send_b(t_swap *stack_1, t_swap *stack_2)
 {
     int pivot;
     int i;
 
     i = 0;
     pivot = find_pivot(stack_1);
-
     while (i < stack_1->capacity)
     {
         if (stack_1->array[stack_1->capacity - 1] <= pivot)
@@ -46,6 +45,12 @@ void if_small_send_b(t_swap *stack_1, t_swap *stack_2)
             rotate(stack_1);
         i++;
     }
+}
+
+//En iyi sıralamayı bulan fonksiyon
+void    best_route()
+{
+    
 }
 
 void	big_sort(t_swap *stack_1, t_swap *stack_2)
