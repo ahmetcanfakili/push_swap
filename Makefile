@@ -26,8 +26,6 @@ all: $(NAME)
 
 clean:
 	rm -rf $(OBJ)
-	rm -rf checker
-	rm -rf main.o
 	make -C utils/ft_printf clean
 	make -C utils/libft clean
 

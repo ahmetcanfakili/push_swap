@@ -47,12 +47,24 @@ void    if_small_send_b(t_swap *stack_1, t_swap *stack_2)
     }
 }
 
-//En iyi sıralamayı bulan fonksiyon
-void    best_route()
+//Finds the best sorting.
+void    best_route(t_swap *stack_1, t_swap *stack_2)
 {
-    
+    int min;
+    int a;
+    int b;
+
+    min = INT_MAX;
+    while (a < stack_2->capacity)
+    {
+        b = best_index(stack_1, stack_2->array[stack_2->capacity - 1 - a]);
+
+        a++;
+    }
+
 }
 
+//Main sort function
 void	big_sort(t_swap *stack_1, t_swap *stack_2)
 {
     
