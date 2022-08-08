@@ -50,8 +50,8 @@ void if_small_send_b(t_swap *stack_1, t_swap *stack_2)
 
 void	big_sort(t_swap *stack_1, t_swap *stack_2)
 {
-
     
+
     if_small_send_b(stack_1, stack_2);
     
 

@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		return (0);
 	check_dup(&a);
 	indexing(&a);
-	check_sorted(&a);
+	//check_sorted(&a);
 	sort(&a, &b);
 	free(a.array);
 	free(b.array);

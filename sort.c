@@ -55,8 +55,8 @@ void	move_top(t_swap *stack, int idx)
 
 void	sort(t_swap *stack_1, t_swap *stack_2)
 {
-	if (stack_1->capacity > 5)
-		big_sort(&stack_1, &stack_2);
-	else
+	if (stack_1->capacity >= 2 && stack_1->capacity <= 5)
 		small_sort(&stack_1, &stack_2);
+	else
+		big_sort(&stack_1, &stack_2);
 }
