@@ -69,7 +69,7 @@ void	indexing(t_swap *stack)
     while (i < stack->capacity)
     {
         j = 0;
-        while (j < ft_strlen(sorted))
+        while (j < stack->capacity)
         {
             if (stack->array[i] == sorted[j])
                 stack->array[i] = j;
@@ -80,7 +80,6 @@ void	indexing(t_swap *stack)
     free(sorted);
 }
 
-//B’deki değerin A’da gelebilecek en iyi yeri bulan fonksiyon
 int     best_index(t_swap *stack, int arg)
 {
     int i;

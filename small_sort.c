@@ -14,7 +14,7 @@
 
 void	two_arg_sort(t_swap *stack)
 {
-	if (stack->array[1] > stack->array[0])
+	if (stack->array[stack->capacity - 1] > stack->array[stack->capacity - 2])
 		swap(stack);
 }
 
@@ -64,9 +64,9 @@ void	small_sort(t_swap *stack_1, t_swap *stack_2)
 	if (stack_1->capacity == 2)
 		two_arg_sort(stack_1);
 	else if (stack_1->capacity == 3)
-		three_args_sort(stack_1);
+		three_arg_sort(stack_1);
 	else if (stack_1->capacity == 4)
-		four_args_sort(stack_1, stack_2);
+		four_arg_sort(stack_1, stack_2);
 	else if (stack_1->capacity == 5)
 		five_arg_sort(stack_1, stack_2);
 }

@@ -27,6 +27,8 @@ char	**read_args(int argc, char **argv)
 		idx++;
 	}
 	split_str = ft_split(str, " ");
+	check_split(split_str);
+	check_numbers(split_str);
 	free(str);
 	return (split_str);
 }
