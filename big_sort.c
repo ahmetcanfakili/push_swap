@@ -12,78 +12,104 @@
 
 #include "push_swap.h"
 
-int     find_pivot(t_swap *stack)
+int	find_pivot(t_swap *stack)
 {
-    unsigned i;
-    long min = stack->array[0];
-    long max = stack->array[0];
+	unsigned int	i;
+	long			min;
+	long			max;
 
-    i = 1;
-    while (i < stack->capacity)
-    {
-        if (stack->array[stack->capacity - i] < min)
-            min = stack->array[stack->capacity - i];
-        else if (stack->array[stack->capacity - i] > max)
-            max = stack->array[stack->capacity - i];
-        i++;
-    }
-    return ((min + max) / 2);
+	min = INT_MAX;
+	max = INT_MIN;
+	i = 1;
+	while (i < stack->capacity)
+	{
+		if (stack->array[stack->capacity - i] < min)
+			min = stack->array[stack->capacity - i];
+		else if (stack->array[stack->capacity - i] > max)
+			max = stack->array[stack->capacity - i];
+		i++;
+	}
+	return ((min + max) / 2);
 }
 
-void    if_small_send_b(t_swap *stack_1, t_swap *stack_2)
+void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
 {
-    int pivot;
-    int i;
+	int	min;
+	int	b;
+	int	pos_a;
+	int	temp[2];
 
-    i = 0;
-    pivot = find_pivot(stack_1);
-    while (i < stack_1->capacity)
-    {
-        if (stack_1->array[stack_1->capacity - 1] <= pivot)
-            push(stack_1, stack_2);
-        else
-            rotate(stack_1);
-        i++;
-    }
+	min = INT_MAX;
+	b = 0;
+	while (b++ < stack_2->capacity)
+	{
+		pos_a = find_pos(stack_1, stack_2->array[stack_2->capacity - 1 - b]);
+		if (b < stack_2->capacity / 2)
+			temp[0] = b;
+		else
+			temp[0] = stack_2->capacity - b - 1;
+		if (pos_a < stack_1->capacity / 2)
+			temp[1] = pos_a;
+		else
+			temp[1] = stack_1->capacity - pos_a - 1;
+		if (temp[0] + temp[1] < min)
+		{
+			min = temp[0] + temp[1];
+			*idx_b = b;
+			*idx_a = pos_a;
+		}
+	}
 }
 
-
-/*en kısa yolu bulan fonksiyon, b deki her değer için a daki
-* yollar hesaplanır takibinde en kısası işlem görür*/
-//Finds the best sorting.
-void    best_route(t_swap *stack_1, t_swap *stack_2)
+void	rot_together_st(t_swap *st_1, t_swap *st_2, int *idx_a, int *idx_b)
 {
-    int min;
-    int a;
-    int b;
-
-    min = INT_MAX;
-    while (a < stack_2->capacity)
-    {
-        b = best_index(stack_1, stack_2->array[stack_2->capacity - 1 - a]);
-        
-
-
-        a++;
-    }
-
+	if (*idx_a < (st_1->capacity / 2) && *idx_b < (st_2->capacity / 2))
+	{
+		while (*idx_a > 0 && *idx_b > 0)
+		{
+			rr(st_1, st_2);
+			*idx_a -= 1;
+			*idx_b -= 1;
+		}
+	}
+	else if (*idx_a >= (st_1->capacity / 2) \
+			&& *idx_b >= (st_2->capacity / 2))
+	{
+		while (*idx_a < st_1->capacity && *idx_b < st_2->capacity \
+				&& *idx_a != 0 && *idx_b != 0)
+		{
+			rrr(st_1, st_2);
+			*idx_a += 1;
+			*idx_b += 1;
+		}
+	}
 }
 
-//her şeyin başı
-//Main sort function
+void	find_zero_and_sort(t_swap *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->array[i] != 0)
+		i++;
+	if (i++ < stack->capacity / 2)
+		while (i--)
+			reverse_rotate(stack);
+	else
+		while (i++ < stack->capacity)
+			rotate(stack);
+}
+
 void	big_sort(t_swap *stack_1, t_swap *stack_2)
 {
-    
+	int	idx_a;
+	int	idx_b;
 
-    if_small_send_b(stack_1, stack_2);
-        while ()
-        {
-            best_route()
-            
-        }
-
-    
-    
-
+	if_small_send_b(stack_1, stack_2);
+	while (stack_2->capacity)
+	{
+		best_route(stack_1, stack_2, &idx_a, &idx_b);
+		send_to_a(stack_1, stack_2, idx_a, idx_b);
+	}
+	find_zero_and_sort(stack_1);
 }
-

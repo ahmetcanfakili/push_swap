@@ -12,29 +12,29 @@
 
 #include "push_swap.h"
 
-void    check_dup(t_swap *stack_1, t_swap *stack_2)
+void	check_dup(t_swap *stack_1, t_swap *stack_2)
 {
-    unsigned    i;
-    unsigned    j;
+	unsigned int	i;
+	unsigned int	j;
 
-    i = 0;
-    while (i < stack_1->capacity)
-    {
-        j = i + 1;
-        while (j < stack_1->capacity)
-        {
-            if (stack_1->array[i] == stack_1->array[j])
-                error(stack_1, stack_2);
-            j++;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < stack_1->capacity)
+	{
+		j = i + 1;
+		while (j < stack_1->capacity)
+		{
+			if (stack_1->array[i] == stack_1->array[j])
+				error(stack_1, stack_2);
+			j++;
+		}
+		i++;
+	}
 }
 
-void     check_sorted(t_swap *stack_1, t_swap *stack_2)
+void	check_sorted(t_swap *stack_1, t_swap *stack_2)
 {
-	unsigned	control;
-	unsigned	i;
+	unsigned int	control;
+	unsigned int	i;
 
 	control = 1;
 	i = 0;
@@ -42,14 +42,13 @@ void     check_sorted(t_swap *stack_1, t_swap *stack_2)
 	{
 		if (stack_1->array[i] < stack_1->array[i + 1])
 			control = 0;
-		i++;		
+		i++;
 	}
 	if (control == 1)
-			free_func(stack_1, stack_2);
+		free_func(stack_1, stack_2);
 }
 
-//split_str'yi alacak
-void    check_split(char **split_str)
+void	check_split(char **split_str)
 {
 	int		i;
 	int		j;
@@ -70,15 +69,13 @@ void    check_split(char **split_str)
 		{
 			if (!ft_isdigit(str[j]))
 				error_2();
-
 			j++;
 		}
 		i++;
 	}
 }
 
-//split_str'yi alacak
-void     check_numbers(char **split_str)
+void	check_numbers(char **split_str)
 {
 	int			i;
 	long long	num;

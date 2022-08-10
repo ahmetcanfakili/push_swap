@@ -14,10 +14,10 @@
 
 char	*pre_sort(t_swap *stack)
 {
-	unsigned	i;
-	unsigned	j;
-	char		*tmp;
-	int			tmp_2;
+	unsigned int	i;
+	unsigned int	j;
+	char			*tmp;
+	int				tmp_2;
 
 	i = 0;
 	while (i < stack->capacity)
@@ -26,20 +26,18 @@ char	*pre_sort(t_swap *stack)
 		i++;
 	}
 	i = 0;
-	while (i < stack->capacity)
+	while (i++ < stack->capacity)
 	{	
 		j = i + 1;
-		while (j < stack->capacity)
+		while (j++ < stack->capacity)
 		{
 			if (tmp[i] > tmp[j])
 			{
 				tmp_2 = tmp[j];
 				tmp[j] = tmp[i];
-				tmp[i] = tmp_2;	
+				tmp[i] = tmp_2;
 			}
-			j++;
 		}
-		i++;
 	}
 	return (tmp);
 }

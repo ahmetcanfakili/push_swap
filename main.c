@@ -12,11 +12,13 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_swap	a;
 	t_swap	b;
 
+	if (argc == 1)
+		exit(1);
 	a.id = 'a';
 	b.id = 'b';
 	if (argc >= 2 && argc <= 1000)
@@ -25,9 +27,9 @@ int main(int argc, char **argv)
 		return (0);
 	check_dup(&a, &b);
 	check_sorted(&a, &b);
-	indexing(&a);	
+	indexing(&a);
 	sort(&a, &b);
-	free(a.array);
-	free(b.array);
+	free(&a);
+	free(&b);
 	return (0);
 }

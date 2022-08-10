@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = push_swap
-SRCS = args.c big_sort.c check.c ft_atoi_v2.c index.c instructions.c main.c small_sort.c sort.c stack.c
+SRCS = args.c big_sort.c check.c ft_atoi_v2.c index.c instructions.c instructions_2.c send.c main.c small_sort.c sort.c stack.c
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 
