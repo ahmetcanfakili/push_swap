@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 22:11:32 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/10 22:12:12 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/11 18:26:04 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rr(t_swap *stack_1, t_swap *stack_2)
 
 void	reverse_rotate(t_swap *stack)
 {
-	unsigned int	i;
+	int	i;
 	int				tmp;
 
 	i = 1;
@@ -40,7 +40,7 @@ void	reverse_rotate(t_swap *stack)
 		i++;
 	}
 	stack->array[stack->capacity -1] = tmp;
-	if (stack->id = 'a')
+	if (stack->id == 'a')
 		printf("rra\n");
 	else
 		printf("rrb\n");

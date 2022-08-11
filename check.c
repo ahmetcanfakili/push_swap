@@ -14,8 +14,8 @@
 
 void	check_dup(t_swap *stack_1, t_swap *stack_2)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < stack_1->capacity)
@@ -34,7 +34,7 @@ void	check_dup(t_swap *stack_1, t_swap *stack_2)
 void	check_sorted(t_swap *stack_1, t_swap *stack_2)
 {
 	unsigned int	control;
-	unsigned int	i;
+	int	i;
 
 	control = 1;
 	i = 0;

@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	check_sorted(&a, &b);
 	indexing(&a);
 	sort(&a, &b);
-	free(&a);
-	free(&b);
+	free(a.array);
+	free(b.array);
 	return (0);
 }

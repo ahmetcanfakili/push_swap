@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 13:45:42 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/10 22:11:51 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/11 18:27:17 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int	swap(t_swap *stack)
 	}
 	else
 		return (0);
-	if (stack->id = 'a')
+	if (stack->id == 'a')
 		printf("sa\n");
 	else
 		printf("sb\n");
+	return (0);
 }
 
 int	push(t_swap *stack_1, t_swap *stack_2)
@@ -41,16 +42,17 @@ int	push(t_swap *stack_1, t_swap *stack_2)
 	}
 	else
 		return (0);
-	if (stack_1->id = 'b')
+	if (stack_1->id == 'b')
 		printf("pa\n");
 	else
 		printf("pb\n");
+	return (0);
 }
 
 void	rotate(t_swap *stack)
 {
 	int				tmp;
-	unsigned int	i;
+	int	i;
 
 	i = 1;
 	tmp = stack->array[stack->capacity - 1];
@@ -61,7 +63,7 @@ void	rotate(t_swap *stack)
 		i++;
 	}
 	stack->array[0] = tmp;
-	if (stack->id = 'a')
+	if (stack->id == 'a')
 		printf("ra\n");
 	else
 		printf("rb\n");

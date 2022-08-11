@@ -14,7 +14,7 @@
 
 int	find_pivot(t_swap *stack)
 {
-	unsigned int	i;
+	int	i;
 	long			min;
 	long			max;
 

@@ -33,6 +33,7 @@ int	get_min_idx_or_value(t_swap *stack, int type)
 		return (idx);
 	else if (type == 1)
 		return (min);
+	return (0);
 }
 
 int	get_max_idx_or_value(t_swap *stack, int type)
@@ -56,12 +57,13 @@ int	get_max_idx_or_value(t_swap *stack, int type)
 		return (idx);
 	else if (type == 1)
 		return (max);
+	return (0);
 }
 
 void	indexing(t_swap *stack)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 	char			*sorted;
 
 	sorted = pre_sort(stack);

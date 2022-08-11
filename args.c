@@ -20,13 +20,14 @@ char	**read_args(int argc, char **argv)
 
 	idx = 1;
 	str = "";
+	(void)argc;
 	while (argv[idx])
 	{
 		str = ft_strjoin(str, argv[idx]);
 		str = ft_strjoin(str, " ");
 		idx++;
 	}
-	split_str = ft_split(str, " ");
+	split_str = ft_split(str, ' ');
 	check_split(split_str);
 	check_numbers(split_str);
 	free(str);

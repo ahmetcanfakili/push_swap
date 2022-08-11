@@ -11,16 +11,16 @@
 # **************************************************************************** #
 
 NAME = push_swap
-SRCS = args.c big_sort.c check.c ft_atoi_v2.c index.c instructions.c instructions_2.c send.c main.c small_sort.c sort.c stack.c
-CC = gcc -g
+SRCS = args.c big_sort.c check.c error.c free.c ft_atoi_v2.c index.c instructions_2.c instructions.c main.c send.c small_sort.c sort.c stack.c
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
 $(NAME): $(OBJ)
 	make -C utils/ft_printf
 	make -C utils/libft
-	$(CC) $(CFLAGS) $(SRC) utils/ft_printf/libftprintf.a -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) utils/ft_printf/libftprintf.a -o $(NAME)
 
 all: $(NAME)
 

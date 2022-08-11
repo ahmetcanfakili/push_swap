@@ -14,11 +14,12 @@
 
 char	*pre_sort(t_swap *stack)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 	char			*tmp;
 	int				tmp_2;
 
+	tmp = malloc(sizeof(int) * stack->capacity);
 	i = 0;
 	while (i < stack->capacity)
 	{
@@ -54,7 +55,7 @@ void	move_top(t_swap *stack, int idx)
 void	sort(t_swap *stack_1, t_swap *stack_2)
 {
 	if (stack_1->capacity >= 2 && stack_1->capacity <= 5)
-		small_sort(&stack_1, &stack_2);
+		small_sort(stack_1, stack_2);
 	else
-		big_sort(&stack_1, &stack_2);
+		big_sort(stack_1, stack_2);
 }

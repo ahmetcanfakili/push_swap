@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/10 21:46:51 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/11 19:22:16 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include "utils/libft/libft.h"
 
 typedef struct s_swap {
-	int				id;
-	unsigned int	capacity;
-	int				*array;
+	int	id;
+	int	capacity;
+	int	*array;
 }	t_swap;
 
 int		swap(t_swap *stack);
@@ -61,5 +61,6 @@ void	free_func(t_swap *stack_1, t_swap *stack_2);
 void	rot_together_st(t_swap *st_1, t_swap *st_2, int *idx_a, int *idx_b);
 void	find_zero_and_sort(t_swap *stack);
 void	send_to_a(t_swap *stack_1, t_swap *stack_2, int idx_a, int idx_b);
+void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b);
 
 #endif
