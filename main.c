@@ -17,8 +17,6 @@ int	main(int argc, char **argv)
 	t_swap	a;
 	t_swap	b;
 
-	if (argc == 1)
-		exit(1);
 	a.id = 'a';
 	b.id = 'b';
 	if (argc >= 2 && argc <= 1000)
@@ -28,7 +26,10 @@ int	main(int argc, char **argv)
 	check_dup(&a, &b);
 	check_sorted(&a, &b);
 	indexing(&a);
-	sort(&a, &b);
+	if (a.capacity > 5)
+		big_sort(&a, &b);
+	else
+		small_sort(&a, &b);
 	free(a.array);
 	free(b.array);
 	return (0);

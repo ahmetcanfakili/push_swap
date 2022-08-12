@@ -12,31 +12,7 @@
 
 #include "push_swap.h"
 
-int	get_min_idx_or_value(t_swap *stack, int type)
-{
-	int	idx;
-	int	i;
-	int	min;
-
-	min = INT_MAX;
-	i = 0;
-	while (i < stack->capacity)
-	{
-		if (min > (stack->array[i]))
-		{
-			min = stack->array[i];
-			idx = i;
-		}
-		i++;
-	}
-	if (type == 0)
-		return (idx);
-	else if (type == 1)
-		return (min);
-	return (0);
-}
-
-int	get_max_idx_or_value(t_swap *stack, int type)
+int	get_max_value(t_swap *stack)
 {
 	int	idx;
 	int	i;
@@ -53,11 +29,7 @@ int	get_max_idx_or_value(t_swap *stack, int type)
 		}
 		i++;
 	}
-	if (type == 0)
-		return (idx);
-	else if (type == 1)
-		return (max);
-	return (0);
+	return (idx);
 }
 
 void	indexing(t_swap *stack)
@@ -103,6 +75,6 @@ int	find_pos(t_swap *stack, int arg)
 		i++;
 	}
 	if (pos == -1)
-		pos = get_max_idx_or_value(stack, 0);
+		pos = get_max_value(stack);
 	return (pos);
 }

@@ -19,7 +19,7 @@ char	**read_args(int argc, char **argv)
 	unsigned int	idx;
 
 	idx = 1;
-	str = "";
+	str = ft_strdup("");
 	(void)argc;
 	while (argv[idx])
 	{

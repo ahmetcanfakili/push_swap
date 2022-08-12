@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:31:21 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/13 00:20:40 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/13 00:45:40 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	if_small_send_b(t_swap *stack_1, t_swap *stack_2)
 
 	i = 0;
 	pivot = find_pivot(stack_1);
+	if (stack_1->capacity < 3)
+		return ;
 	while (i < stack_1->capacity)
 	{
 		if (stack_1->array[stack_1->capacity - 1] <= pivot)
@@ -27,8 +29,7 @@ void	if_small_send_b(t_swap *stack_1, t_swap *stack_2)
 			rotate(stack_1, 0);
 		i++;
 	}
-	if (stack_1->capacity > 2)
-		if_small_send_b(stack_1, stack_2);
+	if_small_send_b(stack_1, stack_2);
 }
 
 void	send_to_a(t_swap *stack_1, t_swap *stack_2, int idx_a, int idx_b)

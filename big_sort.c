@@ -34,19 +34,19 @@ int	find_pivot(t_swap *stack)
 void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
 {
 	int	min;
-	int	b;
+	int	pos_b;
 	int	pos_a;
 	int	temp[2];
 
 	min = INT_MAX;
-	b = 0;
-	while (b++ < stack_2->capacity)
+	pos_b = 0;
+	while (pos_b++ < stack_2->capacity)
 	{
-		pos_a = find_pos(stack_1, stack_2->array[stack_2->capacity - 1 - b]);
-		if (b < stack_2->capacity / 2)
-			temp[0] = b;
+		pos_a = find_pos(stack_1, stack_2->array[stack_2->capacity - 1 - pos_b]);
+		if (pos_b < stack_2->capacity / 2)
+			temp[0] = pos_b;
 		else
-			temp[0] = stack_2->capacity - b - 1;
+			temp[0] = stack_2->capacity - pos_b - 1;
 		if (pos_a < stack_1->capacity / 2)
 			temp[1] = pos_a;
 		else
@@ -54,7 +54,7 @@ void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
 		if (temp[0] + temp[1] < min)
 		{
 			min = temp[0] + temp[1];
-			*idx_b = b;
+			*idx_b = pos_b;
 			*idx_a = pos_a;
 		}
 	}
@@ -66,18 +66,16 @@ void	rot_together_st(t_swap *st_1, t_swap *st_2, int *idx_a, int *idx_b)
 	{
 		while (*idx_a > 0 && *idx_b > 0)
 		{
-			rr(st_1, st_2);
+			rr(st_1, st_2, 0);
 			*idx_a -= 1;
 			*idx_b -= 1;
 		}
 	}
-	else if (*idx_a >= (st_1->capacity / 2) \
-			&& *idx_b >= (st_2->capacity / 2))
+	else if (*idx_a >= (st_1->capacity / 2) && *idx_b >= (st_2->capacity / 2))
 	{
-		while (*idx_a < st_1->capacity && *idx_b < st_2->capacity \
-				&& *idx_a != 0 && *idx_b != 0)
+		while (*idx_a < st_1->capacity && *idx_b < st_2->capacity && *idx_a != 0 && *idx_b != 0)
 		{
-			rrr(st_1, st_2);
+			rrr(st_1, st_2, 0);
 			*idx_a += 1;
 			*idx_b += 1;
 		}
@@ -107,6 +105,8 @@ void	big_sort(t_swap *stack_1, t_swap *stack_2)
 	if_small_send_b(stack_1, stack_2);
 	while (stack_2->capacity)
 	{
+		if (stack_1->capacity <= 1)
+			push(stack_2, stack_1, 0);
 		best_route(stack_1, stack_2, &idx_a, &idx_b);
 		send_to_a(stack_1, stack_2, idx_a, idx_b);
 	}

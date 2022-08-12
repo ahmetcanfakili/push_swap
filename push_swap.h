@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/13 00:21:16 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/13 01:35:20 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ typedef struct s_swap {
 }	t_swap;
 
 void	swap(t_swap *stack, int type);
-void	ss(t_swap *stack_1, t_swap *stack_2);
+void	ss(t_swap *stack_1, t_swap *stack_2, int type);
 void	push(t_swap *stack_1, t_swap *stack_2, int type);
 void	rotate(t_swap *stack, int type);
-void	rr(t_swap *stack_1, t_swap *stack_2);
+void	rr(t_swap *stack_1, t_swap *stack_2, int type);
 void	reverse_rotate(t_swap *stack, int type);
-void	rrr(t_swap *stack_1, t_swap *stack_2);
+void	rrr(t_swap *stack_1, t_swap *stack_2, int type);
 int		ft_atoi_v2(const char *str);
 char	**read_args(int argc, char **argv);
 void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2);
@@ -42,8 +42,7 @@ void	three_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	four_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	five_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	check_sorted(t_swap *stack_1, t_swap *stack_2);
-int		get_min_idx_or_value(t_swap *stack, int type);
-int		get_max_idx_or_value(t_swap *stack, int type);
+int		get_max_value(t_swap *stack);
 void	free_stack(t_swap *stack);
 int		is_valid_arg(char *arg);
 void	small_sort(t_swap *stack_1, t_swap *stack_2);

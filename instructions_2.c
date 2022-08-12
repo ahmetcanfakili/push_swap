@@ -6,24 +6,30 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 22:11:32 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/12 23:39:36 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/13 01:33:02 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_swap *stack_1, t_swap *stack_2)
+void	ss(t_swap *stack_1, t_swap *stack_2, int type)
 {
-	swap(stack_1, 1);
-	swap(stack_2, 1);
-	ft_printf("ss\n");
+	if (!type)
+	{
+		swap(stack_1, 1);
+		swap(stack_2, 1);
+		ft_printf("ss\n");
+	}
 }
 
-void	rr(t_swap *stack_1, t_swap *stack_2)
+void	rr(t_swap *stack_1, t_swap *stack_2, int type)
 {
-	rotate(stack_1, 1);
-	rotate(stack_2, 1);
-	ft_printf("rr\n");
+	if (!type)
+	{
+		rotate(stack_1, 1);
+		rotate(stack_2, 1);
+		ft_printf("rr\n");
+	}	
 }
 
 void	reverse_rotate(t_swap *stack, int type)
@@ -48,9 +54,12 @@ void	reverse_rotate(t_swap *stack, int type)
 	}
 }
 
-void	rrr(t_swap *stack_1, t_swap *stack_2)
+void	rrr(t_swap *stack_1, t_swap *stack_2, int type)
 {
-	reverse_rotate(stack_1, 1);
-	reverse_rotate(stack_2, 1);
-	ft_printf("rrr\n");
+	if (!type)
+	{
+		reverse_rotate(stack_1, 1);
+		reverse_rotate(stack_2, 1);
+		ft_printf("rrr\n");
+	}	
 }
