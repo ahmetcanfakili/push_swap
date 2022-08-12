@@ -64,7 +64,7 @@ void	indexing(t_swap *stack)
 {
 	int	i;
 	int	j;
-	char			*sorted;
+	int	*sorted;
 
 	sorted = pre_sort(stack);
 	i = 0;

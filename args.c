@@ -28,8 +28,8 @@ char	**read_args(int argc, char **argv)
 		idx++;
 	}
 	split_str = ft_split(str, ' ');
-	check_split(split_str);
-	check_numbers(split_str);
+	//check_split(split_str);			// gerekli mi ??
+	//check_numbers(split_str);		// gerekli mi ??
 	free(str);
 	return (split_str);
 }

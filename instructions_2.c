@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 22:11:32 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/11 18:26:04 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/12 23:39:36 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,43 @@
 
 void	ss(t_swap *stack_1, t_swap *stack_2)
 {
-	swap(stack_1);
-	swap(stack_2);
-	printf("ss\n");
+	swap(stack_1, 1);
+	swap(stack_2, 1);
+	ft_printf("ss\n");
 }
 
 void	rr(t_swap *stack_1, t_swap *stack_2)
 {
-	rotate(stack_1);
-	rotate(stack_2);
-	printf("rr");
+	rotate(stack_1, 1);
+	rotate(stack_2, 1);
+	ft_printf("rr\n");
 }
 
-void	reverse_rotate(t_swap *stack)
+void	reverse_rotate(t_swap *stack, int type)
 {
 	int	i;
 	int				tmp;
 
-	i = 1;
+	i = 0;
 	tmp = stack->array[0];
-	while (i < stack->capacity)
+	while (i < stack->capacity - 1)
 	{
-		stack->array[stack->capacity - 1 - i] = \
-			stack->array[stack->capacity - i];
+		stack->array[i] = stack->array[i + 1];
 		i++;
 	}
-	stack->array[stack->capacity -1] = tmp;
-	if (stack->id == 'a')
-		printf("rra\n");
-	else
-		printf("rrb\n");
+	stack->array[stack->capacity - 1] = tmp;
+	if (!type)
+	{
+		if (stack->id == 'a')
+			ft_printf("rra\n");
+		else
+			ft_printf("rrb\n");
+	}
 }
 
 void	rrr(t_swap *stack_1, t_swap *stack_2)
 {
-	reverse_rotate(stack_1);
-	reverse_rotate(stack_2);
-	printf("rrr");
+	reverse_rotate(stack_1, 1);
+	reverse_rotate(stack_2, 1);
+	ft_printf("rrr\n");
 }

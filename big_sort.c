@@ -20,16 +20,15 @@ int	find_pivot(t_swap *stack)
 
 	min = INT_MAX;
 	max = INT_MIN;
-	i = 1;
-	while (i < stack->capacity)
+	i = 0;
+	while (i++ < stack->capacity)
 	{
 		if (stack->array[stack->capacity - i] < min)
 			min = stack->array[stack->capacity - i];
 		else if (stack->array[stack->capacity - i] > max)
 			max = stack->array[stack->capacity - i];
-		i++;
 	}
-	return ((min + max) / 2);
+	return ((int)(min + max) / 2);
 }
 
 void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
@@ -94,10 +93,10 @@ void	find_zero_and_sort(t_swap *stack)
 		i++;
 	if (i++ < stack->capacity / 2)
 		while (i--)
-			reverse_rotate(stack);
+			reverse_rotate(stack, 0);
 	else
 		while (i++ < stack->capacity)
-			rotate(stack);
+			rotate(stack, 0);
 }
 
 void	big_sort(t_swap *stack_1, t_swap *stack_2)

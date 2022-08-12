@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-char	*pre_sort(t_swap *stack)
+int	*pre_sort(t_swap *stack)
 {
 	int	i;
 	int	j;
-	char			*tmp;
-	int				tmp_2;
+	int	*tmp;
+	int	tmp_2;
 
 	tmp = malloc(sizeof(int) * stack->capacity);
 	i = 0;
@@ -29,27 +29,18 @@ char	*pre_sort(t_swap *stack)
 	i = 0;
 	while (i++ < stack->capacity)
 	{	
-		j = i + 1;
+		j = i - 1;
 		while (j++ < stack->capacity)
 		{
 			if (tmp[i] > tmp[j])
 			{
-				tmp_2 = tmp[j];
-				tmp[j] = tmp[i];
-				tmp[i] = tmp_2;
+				tmp_2 = tmp[i];
+				tmp[i] = tmp[j];
+				tmp[j] = tmp_2;
 			}
 		}
 	}
 	return (tmp);
-}
-
-void	move_top(t_swap *stack, int idx)
-{
-	int	min_arg;
-
-	min_arg = stack->array[idx];
-	while (min_arg != stack->array[stack->capacity - 1])
-		rotate(stack);
 }
 
 void	sort(t_swap *stack_1, t_swap *stack_2)
