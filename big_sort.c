@@ -14,9 +14,9 @@
 
 int	find_pivot(t_swap *stack)
 {
-	int	i;
-	long			min;
-	long			max;
+	int		i;
+	long	min;
+	long	max;
 
 	min = INT_MAX;
 	max = INT_MIN;
@@ -31,7 +31,7 @@ int	find_pivot(t_swap *stack)
 	return ((int)(min + max) / 2);
 }
 
-void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
+void	best_route(t_swap *st1, t_swap *st2, int *idx_a, int *idx_b)
 {
 	int	min;
 	int	pos_b;
@@ -40,17 +40,17 @@ void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
 
 	min = INT_MAX;
 	pos_b = -1;
-	while (++pos_b < stack_2->capacity)
+	while (++pos_b < st2->capacity)
 	{
-		pos_a = find_pos(stack_1, stack_2->array[stack_2->capacity - 1 - pos_b]);
-		if (pos_b < stack_2->capacity / 2)
+		pos_a = find_pos(st1, st2->array[st2->capacity - 1 - pos_b]);
+		if (pos_b < st2->capacity / 2)
 			temp[0] = pos_b;
 		else
-			temp[0] = stack_2->capacity - pos_b - 1;
-		if (pos_a < stack_1->capacity / 2)
+			temp[0] = st2->capacity - pos_b - 1;
+		if (pos_a < st1->capacity / 2)
 			temp[1] = pos_a;
 		else
-			temp[1] = stack_1->capacity - pos_a - 1;
+			temp[1] = st1->capacity - pos_a - 1;
 		if (temp[0] + temp[1] < min)
 		{
 			min = temp[0] + temp[1];
@@ -73,7 +73,8 @@ void	rot_together_st(t_swap *st_1, t_swap *st_2, int *idx_a, int *idx_b)
 	}
 	else if (*idx_a >= (st_1->capacity / 2) && *idx_b >= (st_2->capacity / 2))
 	{
-		while (*idx_a < st_1->capacity && *idx_b < st_2->capacity && *idx_a != 0 && *idx_b != 0)
+		while (*idx_a < st_1->capacity && *idx_b < \
+			st_2->capacity && *idx_a != 0 && *idx_b != 0)
 		{
 			rrr(st_1, st_2, 0);
 			*idx_a += 1;

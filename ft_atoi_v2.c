@@ -32,7 +32,7 @@ int	ft_atoi_v2(char *str, t_swap *stack_1, t_swap *stack_2)
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			error(stack_1, stack_2);
 		res = (res * 10) + str[i++] - '0';
-		if ((res * neg) > __INT_MAX__ || (res * neg) < -__INT_MAX__ - 1)
+		if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
 			error(stack_1, stack_2);
 	}
 	return ((int)res * neg);

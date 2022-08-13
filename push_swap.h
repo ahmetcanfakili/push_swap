@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 14:05:26 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/13 16:32:11 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/13 18:07:35 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,13 @@ void	four_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	five_arg_sort(t_swap *stack_1, t_swap *stack_2);
 void	check_sorted(t_swap *stack_1, t_swap *stack_2);
 int		get_max_value(t_swap *stack);
-void	free_stack(t_swap *stack);
-int		is_valid_arg(char *arg);
 void	small_sort(t_swap *stack_1, t_swap *stack_2);
 void	big_sort(t_swap *stack_1, t_swap *stack_2);
 void	sort(t_swap *stack_1, t_swap *stack_2);
 int		find_pivot(t_swap *stack);
 void	if_small_send_b(t_swap *stack_1, t_swap *stack_2);
 int		find_pos(t_swap *stack, int arg);
-void	check_split(char **split_str);
-void	check_numbers(char **split_str);
 void	error(t_swap *stack_1, t_swap *stack_2);
-void	error_2(void);
 void	free_func(t_swap *stack_1, t_swap *stack_2);
 void	rot_together_st(t_swap *st_1, t_swap *st_2, int *idx_a, int *idx_b);
 void	find_zero_and_sort(t_swap *stack);

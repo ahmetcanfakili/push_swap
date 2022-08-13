@@ -12,6 +12,30 @@
 
 #include "push_swap.h"
 
+int	find_pos(t_swap *stack, int arg)
+{
+	int	i;
+	int	pos;
+	int	min;
+	int	df;
+
+	min = INT_MAX;
+	i = -1;
+	pos = -1;
+	while (++i < stack->capacity)
+	{
+		df = stack->array[stack->capacity - 1 - i] - arg;
+		if (df > 0 && df < min)
+		{
+			min = df;
+			pos = i;
+		}
+	}
+	if (pos == -1)
+		pos = get_max_value(stack);
+	return (pos);
+}
+
 int	get_max_value(t_swap *stack)
 {
 	int	idx;
@@ -43,37 +67,8 @@ void	indexing(t_swap *stack)
 	{
 		j = -1;
 		while (++j < stack->capacity)
-		{
 			if (stack->array[i] == sorted[j])
-			{
 				stack->array[i] = j;
-				break ;
-			}
-		}
 	}
 	free(sorted);
-}
-
-int	find_pos(t_swap *stack, int arg)
-{
-	int	i;
-	int	pos;
-	int	min;
-	int	df;
-
-	min = INT_MAX;
-	i = -1;
-	pos = -1;
-	while (++i < stack->capacity)
-	{
-		df = stack->array[stack->capacity - 1 - i] - arg;
-		if (df > 0 && df < min)
-		{
-			min = df;
-			pos = i;
-		}
-	}
-	if (pos == -1)
-		pos = get_max_value(stack);
-	return (pos);
 }

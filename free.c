@@ -18,12 +18,3 @@ void	free_func(t_swap *stack_1, t_swap *stack_2)
 	free(stack_2->array);
 	exit(1);
 }
-
-void	free_stack(t_swap *stack)
-{
-	if (stack)
-	{
-		free(stack->array);
-		free(stack);
-	}
-}

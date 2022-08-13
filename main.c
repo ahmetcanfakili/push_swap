@@ -26,11 +26,8 @@ int	main(int argc, char **argv)
 	check_dup(&a, &b);
 	check_sorted(&a, &b);
 	indexing(&a);
-	if (a.capacity > 5)
-		big_sort(&a, &b);
-	else
-		small_sort(&a, &b);
-	free(a.array);
+	sort(&a, &b);
 	free(b.array);
+	free(a.array);
 	return (0);
 }

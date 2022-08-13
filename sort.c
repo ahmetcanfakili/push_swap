@@ -12,6 +12,26 @@
 
 #include "push_swap.h"
 
+void	sort(t_swap *stack_1, t_swap *stack_2)
+{
+	if (stack_1->capacity > 5)
+		big_sort(stack_1, stack_2);
+	else
+		small_sort(stack_1, stack_2);
+}
+
+void	small_sort(t_swap *stack_1, t_swap *stack_2)
+{
+	if (stack_1->capacity == 2)
+		two_arg_sort(stack_1);
+	else if (stack_1->capacity == 3)
+		three_arg_sort(stack_1, stack_2);
+	else if (stack_1->capacity == 4)
+		four_arg_sort(stack_1, stack_2);
+	else if (stack_1->capacity == 5)
+		five_arg_sort(stack_1, stack_2);
+}
+
 int	*pre_sort(t_swap *stack)
 {
 	int	i;
