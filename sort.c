@@ -20,17 +20,14 @@ int	*pre_sort(t_swap *stack)
 	int	tmp_2;
 
 	tmp = malloc(sizeof(int) * stack->capacity);
-	i = 0;
-	while (i < stack->capacity)
-	{
+	i = -1;
+	while (++i < stack->capacity)
 		tmp[i] = stack->array[i];
-		i++;
-	}
-	i = 0;
-	while (i++ < stack->capacity)
+	i = -1;
+	while (++i < stack->capacity)
 	{	
 		j = i - 1;
-		while (j++ < stack->capacity)
+		while (++j < stack->capacity)
 		{
 			if (tmp[i] > tmp[j])
 			{

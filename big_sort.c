@@ -39,8 +39,8 @@ void	best_route(t_swap *stack_1, t_swap *stack_2, int *idx_a, int *idx_b)
 	int	temp[2];
 
 	min = INT_MAX;
-	pos_b = 0;
-	while (pos_b++ < stack_2->capacity)
+	pos_b = -1;
+	while (++pos_b < stack_2->capacity)
 	{
 		pos_a = find_pos(stack_1, stack_2->array[stack_2->capacity - 1 - pos_b]);
 		if (pos_b < stack_2->capacity / 2)

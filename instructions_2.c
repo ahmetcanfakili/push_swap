@@ -6,7 +6,7 @@
 /*   By: afakili <ahmetcanfakili50@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 22:11:32 by afakili           #+#    #+#             */
-/*   Updated: 2022/08/13 01:33:02 by afakili          ###   ########.fr       */
+/*   Updated: 2022/08/13 17:09:01 by afakili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,10 @@ void	reverse_rotate(t_swap *stack, int type)
 	int	i;
 	int				tmp;
 
-	i = 0;
+	i = -1;
 	tmp = stack->array[0];
-	while (i < stack->capacity - 1)
-	{
+	while (++i < stack->capacity - 1)
 		stack->array[i] = stack->array[i + 1];
-		i++;
-	}
 	stack->array[stack->capacity - 1] = tmp;
 	if (!type)
 	{

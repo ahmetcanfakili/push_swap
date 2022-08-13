@@ -14,22 +14,19 @@
 
 char	**read_args(int argc, char **argv)
 {
-	char			*str;
-	char			**split_str;
-	unsigned int	idx;
+	char	*str;
+	char	**split_str;
+	int		idx;
 
-	idx = 1;
+	idx = 0;
 	str = ft_strdup("");
 	(void)argc;
-	while (argv[idx])
+	while (argv[++idx])
 	{
 		str = ft_strjoin(str, argv[idx]);
 		str = ft_strjoin(str, " ");
-		idx++;
 	}
 	split_str = ft_split(str, ' ');
-	//check_split(split_str);			// gerekli mi ??
-	//check_numbers(split_str);		// gerekli mi ??
 	free(str);
 	return (split_str);
 }

@@ -14,8 +14,8 @@
 
 void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
 {
-	unsigned int	i;
-	char			**string;
+	int		i;
+	char	**string;
 
 	i = 0;
 	string = read_args(argc, argv);
@@ -23,14 +23,13 @@ void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
 		i++;
 	stack_1->capacity = i;
 	stack_2->capacity = 0;
-	stack_1->array = (int *)malloc(sizeof(int) * stack_1->capacity);
-	stack_2->array = (int *)malloc(sizeof(int) * stack_1->capacity);
-	i = 0;
-	while (string[i])
+	stack_1->array = malloc(sizeof(int) * stack_1->capacity);
+	stack_2->array = malloc(sizeof(int) * stack_1->capacity);
+	i = -1;
+	while (string[++i])
 	{
-		stack_1->array[stack_1->capacity - 1 - i] = ft_atoi_v2(string[i]);
-		i++;
+		stack_1->array[stack_1->capacity - 1 - i] = ft_atoi_v2(string[i], stack_1, stack_2);
+		free(string[i]);
 	}
 	free(string);
 }
-

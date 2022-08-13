@@ -19,15 +19,14 @@ int	get_max_value(t_swap *stack)
 	int	max;
 
 	max = INT_MIN;
-	i = 0;
-	while (i < stack->capacity)
+	i = -1;
+	while (++i < stack->capacity)
 	{
-		if (max < (stack->array[i]))
+		if (max < stack->array[i])
 		{
 			max = stack->array[i];
 			idx = i;
 		}
-		i++;
 	}
 	return (idx);
 }
@@ -39,17 +38,18 @@ void	indexing(t_swap *stack)
 	int	*sorted;
 
 	sorted = pre_sort(stack);
-	i = 0;
-	while (i < stack->capacity)
+	i = -1;
+	while (++i < stack->capacity)
 	{
-		j = 0;
-		while (j < stack->capacity)
+		j = -1;
+		while (++j < stack->capacity)
 		{
 			if (stack->array[i] == sorted[j])
+			{
 				stack->array[i] = j;
-			j++;
+				break ;
+			}
 		}
-		i++;
 	}
 	free(sorted);
 }
@@ -62,9 +62,9 @@ int	find_pos(t_swap *stack, int arg)
 	int	df;
 
 	min = INT_MAX;
-	i = 0;
+	i = -1;
 	pos = -1;
-	while (i < stack->capacity)
+	while (++i < stack->capacity)
 	{
 		df = stack->array[stack->capacity - 1 - i] - arg;
 		if (df > 0 && df < min)
@@ -72,7 +72,6 @@ int	find_pos(t_swap *stack, int arg)
 			min = df;
 			pos = i;
 		}
-		i++;
 	}
 	if (pos == -1)
 		pos = get_max_value(stack);
