@@ -30,6 +30,7 @@ void	create_stack(int argc, char **argv, t_swap *stack_1, t_swap *stack_2)
 	{
 		stack_1->array[stack_1->capacity - 1 - i] = \
 			ft_atoi_v2(string[i], stack_1, stack_2);
+		free(string[i]);
 	}
 	free(string);
 }

@@ -15,6 +15,7 @@
 char	**read_args(int argc, char **argv)
 {
 	char	*str;
+	char	*dst;
 	char	**split_str;
 	int		idx;
 
@@ -24,9 +25,10 @@ char	**read_args(int argc, char **argv)
 	while (argv[++idx])
 	{
 		str = ft_strjoin(str, argv[idx]);
-		str = ft_strjoin(str, " ");
+		dst = ft_strjoin(str, " ");
+		free(str);
 	}
-	split_str = ft_split(str, ' ');
-	free(str);
+	split_str = ft_split(dst, ' ');
+	free(dst);
 	return (split_str);
 }
