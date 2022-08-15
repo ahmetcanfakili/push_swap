@@ -67,8 +67,13 @@ void	indexing(t_swap *stack)
 	{
 		j = -1;
 		while (++j < stack->capacity)
+		{
 			if (stack->array[i] == sorted[j])
+			{
 				stack->array[i] = j;
+				break ;
+			}
+		}		
 	}
 	free(sorted);
 }
