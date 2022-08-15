@@ -25,7 +25,7 @@ int	find_pivot(t_swap *stack)
 	{
 		if (stack->array[stack->capacity - i] < min)
 			min = stack->array[stack->capacity - i];
-		else if (stack->array[stack->capacity - i] > max)
+		if (stack->array[stack->capacity - i] > max)
 			max = stack->array[stack->capacity - i];
 	}
 	return ((int)(min + max) / 2);
