@@ -15,20 +15,23 @@
 char	**read_args(int argc, char **argv)
 {
 	char	*str;
-	char	*dst;
+	char	*tmp;
 	char	**split_str;
 	int		idx;
 
 	idx = 0;
-	str = "";
 	(void)argc;
+	str = ft_strdup("");
 	while (argv[++idx])
 	{
+		tmp = str;
 		str = ft_strjoin(str, argv[idx]);
-		dst = ft_strjoin(str, " ");
-		free(str);
+		free(tmp);
+		tmp = str;
+		str = ft_strjoin(str, " ");
+		free(tmp);
 	}
-	split_str = ft_split(dst, ' ');
-	free(dst);
+	split_str = ft_split(str, ' ');
+	free(str);
 	return (split_str);
 }
